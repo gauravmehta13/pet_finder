@@ -3,7 +3,6 @@ import 'package:pet_finder/data.dart';
 import 'package:pet_finder/user_avatar.dart';
 
 class PetDetail extends StatelessWidget {
-
   final Pet pet;
 
   PetDetail({@required this.pet});
@@ -39,11 +38,9 @@ class PetDetail extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-
           Expanded(
             child: Stack(
               children: [
-
                 Hero(
                   tag: pet.imageUrl,
                   child: Container(
@@ -59,27 +56,22 @@ class PetDetail extends StatelessWidget {
                     ),
                   ),
                 ),
-
               ],
             ),
           ),
-
           Container(
             color: Colors.white,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 Padding(
                   padding: EdgeInsets.all(16),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-
                           Text(
                             pet.name,
                             style: TextStyle(
@@ -88,24 +80,19 @@ class PetDetail extends StatelessWidget {
                               fontSize: 24,
                             ),
                           ),
-
                           SizedBox(
                             height: 8,
                           ),
-
                           Row(
                             children: [
-
                               Icon(
                                 Icons.location_on,
                                 color: Colors.grey[600],
                                 size: 20,
                               ),
-
                               SizedBox(
                                 width: 4,
                               ),
-
                               Text(
                                 pet.location,
                                 style: TextStyle(
@@ -113,11 +100,9 @@ class PetDetail extends StatelessWidget {
                                   fontSize: 14,
                                 ),
                               ),
-
                               SizedBox(
                                 width: 4,
                               ),
-
                               Text(
                                 "(" + pet.distance + "km)",
                                 style: TextStyle(
@@ -126,13 +111,10 @@ class PetDetail extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-
                             ],
                           ),
-
                         ],
                       ),
-
                       Container(
                         height: 50,
                         width: 50,
@@ -146,24 +128,19 @@ class PetDetail extends StatelessWidget {
                           color: pet.favorite ? Colors.white : Colors.grey[300],
                         ),
                       ),
-
                     ],
                   ),
                 ),
-
                 Padding(
                   padding: EdgeInsets.all(8),
                   child: Row(
                     children: [
-
                       buildPetFeature("4 months", "Age"),
                       buildPetFeature("Grey", "Color"),
                       buildPetFeature("11 Kg", "Weight"),
-
                     ],
                   ),
                 ),
-
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
@@ -175,11 +152,9 @@ class PetDetail extends StatelessWidget {
                     ),
                   ),
                 ),
-
                 SizedBox(
                   height: 16,
                 ),
-
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
@@ -190,30 +165,24 @@ class PetDetail extends StatelessWidget {
                     ),
                   ),
                 ),
-
                 SizedBox(
                   height: 16,
                 ),
-
                 Padding(
-                  padding: EdgeInsets.only(right: 16, left: 16, top: 16, bottom: 24),
+                  padding:
+                      EdgeInsets.only(right: 16, left: 16, top: 16, bottom: 24),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-
                       Row(
                         children: [
-
                           UserAvatar(),
-
                           SizedBox(
                             width: 12,
                           ),
-
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-
                               Text(
                                 "Posted by",
                                 style: TextStyle(
@@ -222,27 +191,23 @@ class PetDetail extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-
                               SizedBox(
                                 height: 4,
                               ),
-
                               Text(
-                                "Nannie Barker",
+                                "Mohit Yadav",
                                 style: TextStyle(
                                   color: Colors.grey[600],
                                   fontSize: 14,
                                 ),
                               ),
-
                             ],
                           ),
-
                         ],
                       ),
-
                       Container(
-                        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 12, horizontal: 20),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(
                             Radius.circular(20),
@@ -266,21 +231,18 @@ class PetDetail extends StatelessWidget {
                           ),
                         ),
                       ),
-
                     ],
                   ),
                 ),
-
               ],
             ),
           ),
-
         ],
       ),
     );
   }
 
-  buildPetFeature(String value, String feature){
+  buildPetFeature(String value, String feature) {
     return Expanded(
       child: Container(
         height: 70,
@@ -297,7 +259,6 @@ class PetDetail extends StatelessWidget {
         ),
         child: Column(
           children: [
-
             Text(
               value,
               style: TextStyle(
@@ -306,11 +267,9 @@ class PetDetail extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-
             SizedBox(
               height: 4,
             ),
-
             Text(
               feature,
               style: TextStyle(
@@ -318,11 +277,9 @@ class PetDetail extends StatelessWidget {
                 fontSize: 14,
               ),
             ),
-
           ],
         ),
       ),
     );
   }
-
 }
